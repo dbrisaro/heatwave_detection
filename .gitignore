@@ -1,0 +1,17 @@
+# Data directories
+heatwave_project/data/
+heatwave_project/data/raw/
+heatwave_project/data/processed/
+
+# Output directories
+heatwave_project/outputs/
+heatwave_project/outputs/events_climanom/
+heatwave_project/outputs/events_percentile/
+
+# System files
+.DS_Store
+__pycache__/
+*.pyc
+
+# Jupyter Notebook
+.ipynb_checkpoints/
