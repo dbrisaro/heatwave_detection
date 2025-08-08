@@ -5,6 +5,7 @@ heatwave_project/data/processed/
 
 # Output directories
 heatwave_project/outputs/
+heatwave_project/outputs/bootstrap_results/
 heatwave_project/outputs/events_climanom/
 heatwave_project/outputs/events_percentile/
 
