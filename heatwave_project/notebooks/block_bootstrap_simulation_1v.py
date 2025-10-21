@@ -84,7 +84,3 @@ def run_bootstrap_simulation_single(data, variable, n_simulations=1000, block_le
                   np.percentile(annual_sums,25), np.percentile(annual_sums,75)]
     }).to_csv(f"{output_dir}/summary_stats_{variable}.csv", index=False)
     print(f"✅ Completed {n_simulations} simulations for {variable}")
-
-# Ejemplo de uso:
-# data = pd.read_csv("data.csv", parse_dates=["date"]).set_index("date")
-# run_bootstrap_simulation_single(data, "tmax")
