@@ -27,6 +27,7 @@ def vectorized_block_bootstrap(daily_data, n_simulations, block_length=7, window
     available_years = sorted(daily_data.index.year.unique())
     n_days = len(daily_data)
     valid_starts_cache = {}
+    
     for day_of_year in range(1, 366, block_length):
         ref_year = available_years[0]
         center_date = datetime(ref_year, 1, 1) + timedelta(days=day_of_year - 1)
@@ -42,6 +43,7 @@ def vectorized_block_bootstrap(daily_data, n_simulations, block_length=7, window
                     valid_starts.append(s)
         valid_starts_cache[day_of_year] = valid_starts
     all_indices = np.zeros((n_simulations, 365), dtype=int)
+
     for sim in range(n_simulations):
         np.random.seed(sim)
         current_day = 1
@@ -55,6 +57,7 @@ def vectorized_block_bootstrap(daily_data, n_simulations, block_length=7, window
                 sim_indices.extend(range(start, start + block))
             current_day += block
         all_indices[sim, :] = sim_indices[:365]
+
     return all_indices
 
 def calculate_aep_curve(values):
